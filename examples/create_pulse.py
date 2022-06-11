@@ -18,3 +18,33 @@ indicators = [
 
 response = otx.create_pulse(name=name ,public=True ,indicators=indicators ,tags=["phishing"] , references=[], targeted_countries=["Japan"] )
 
+## Indicator Schema
+#
+# "indicators": {
+#   "type": "array",
+#   "items": {
+#     "type": "object",
+#     "additionalProperties": false,
+#     "required": ["indicator", "type", "description"],
+#     "properties": {
+#       "indicator": {"type": "string"},
+#       "type": {"type": "string"},
+#       "title": {"type": "string"},
+#       "description": {"type": "string"},
+#       "expiration": {"type": "string", "format":  "date-time"},
+#       "content": {"type": "string"},
+#       "role": {"type": ["string", "null"], "enum": [
+#         null, "", "scanning_host", "malware_hosting",
+#         "command_and_control", "exploit_kit",
+#         "malvertising", "phishing",
+#         "bruteforce", "web_attack",
+#         "exploit_source", "trojan", "rat",
+#         "backdoor", "adware", "hacking_tool",
+#         "ransomware", "worm", "macro_malware",
+#         "domain_owner", "delivery_email",
+#         "unknown", "file_scanning",
+#         "memory_scanning", "hunting",
+#         "pcap_scanning"
+#       ]}
+#     }
+#   }
